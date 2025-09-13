@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score kort</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <header>
+
+        <nav class="navbar">
+            <a href="#"><h1>Scorekort</h1></a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#översikt" class="nav-link">Översikt</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#banor" class="nav-link">Banor</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#info" class="nav-link">Info och regler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#inställningar" class="nav-link">Inställningar</a>
+                </li>
+            </ul>
+            <div class="hamburga">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="container" id="översikt">
+            <h2>Spelare:</h2>
+            <ul id="playerList"></ul>
+
+            <h3>Lägg till spelare</h3>
+            <input type="text" id="playerNameInput" placeholder="Namn">
+            <button id="addPlayerBtn">Lägg till</button>
+            <a href="#banor" id="startGameBtn">Starta spel</a>
+        </div>
+
+
+
+        <div class="container" id="banor">
+            <h2>Banor</h2>
+            <div id="courseContainer">
+                <!-- Banor kommer att laddas här -->
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="container" id="info">
+
+            <h2>Priser (Swish eller jämna kontanter)</h2>
+            <ul>
+                <li>Vuxen: 120kr</li>
+                <li>Barn under 15 år: 60kr</li>
+                <li>Swish 123-007 75 29</li>
+            </ul>
+
+            <h3>Läs information och regler innan ni börjar</h3>
+            <h2>Info och regler</h2>
+            <ul>
+                <li>Banans par är 77</li>
+                <li>Hinder markeras med grå stolpe/stolpar</li>
+                <li>Allt spel sker på egen risk</li>
+                <li>Endast ett utslag per hål</li>
+                <li>Bollen spelas ifrån den plats den hamnar</li>
+                <li>Bollen ska ligga stilla vid tillslag</li>
+                <li>Bollen ska gå rätt väg genom hinder, "baklänges" är ej godkänt</li>
+                <li>När ni är redo, <a href="#översikt">börja lägga till spelare</a></li>
+            </ul>
+
+        </div>
+    </main>
+    
+</body>
+</html>
