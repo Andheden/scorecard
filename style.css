@@ -1,116 +1,572 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-header{
+header {
+  background-color: #262626;
+}
+
+li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-branding {
+  font-size: 2rem;
+}
+
+nav.link {
+  transition: 0.7s ease;
+}
+
+nav.link:hover {
+  color: dodgerblue;
+}
+
+.hamburga {
+  display: none;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .hamburga {
+    display: block;
+  }
+
+  .hamburga.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburga.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburga.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
     background-color: #262626;
-}
+    width: 100%;
+    text-align: center;
+    transition: 0.3s ease;
+  }
 
-li{
-    list-style: none;
-}
+  .nav-menu.active {
+    left: 0;
+  }
 
-header a{
-    text-decoration: none;
-    color: white;
-}
+  .nav-item {
+    margin: 16px 0;
+  }
 
-.navbar{
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-}
-
-.nav-menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-}
-
-.nav-branding{
-    font-size: 2rem;
-}
-
-nav.link{
-    transition: 0.7s ease;
-}
-
-nav.link:hover{
-    color: dodgerblue;
-}
-
-.hamburga{
-    display: none;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.bar{
+  nav.link {
+    padding: 20px 0;
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    background-color: white;
+  }
 }
 
-@media(max-width: 768px){
+.container {
+  max-width: 1200px;
+  padding: 0 25px;
+  display: none;
+}
+
+:target {
+  display: block;
+}
+
+#översikt {
+  background: linear-gradient(135deg, #4caf50 80%, #388e3c 100%);
+  min-height: 300px;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+
+#översikt > * {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#playerList {
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+#playerList li {
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.2s;
+}
+
+#playerList li strong {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+#översikt input,
+#översikt button,
+#översikt a {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1rem;
+}
+
+#översikt button,
+#översikt a {
+  background: #388e3c;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+#översikt button:hover,
+#översikt a:hover {
+  background: #2e7031;
+}
+
+#översikt input {
+  border: 1px solid #388e3c;
+  background: #fff;
+  color: #222;
+}
+
+#banor {
+  background: linear-gradient(135deg, #e0e0e0 80%, #bdbdbd 100%);
+  min-height: 300px;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+
+#banor > * {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#courseContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.holeCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+  padding: 20px 24px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.holeCard h2 {
+  color: #388e3c;
+  margin-bottom: 8px;
+}
+
+.holeCard p {
+  margin-bottom: 6px;
+}
+
+.holeCard button {
+  margin: 8px 8px 0 0;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 14px;
+  background: #388e3c;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.holeCard button:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.holeCard button:hover:not(:disabled) {
+  background: #2e7031;
+}
+
+.playerScore {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.playerScore span.player {
+  font-weight: 600;
+  color: #388e3c;
+  margin-right: 8px;
+}
+
+.playerScore .score {
+  font-size: 1.1em;
+  min-width: 32px;
+  text-align: center;
+  background: #e8f5e9;
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin: 0 4px;
+}
+
+.playerScore button {
+  border-radius: 6px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.playerScore button:hover {
+  background: #388e3c;
+}
+
+#inställningar {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+  padding: 32px 24px 48px 24px;
+  margin-top: 32px;
+  min-height: 200px;
+}
+
+#inställningar h2,
+#inställningar h3 {
+  color: #388e3c;
+  margin-bottom: 16px;
+}
+
+.settings-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.settings-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  color: #2e7031;
+}
+
+.settings-section p {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.saveGameBtn,
+.loadGameBtn,
+.reset-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px 8px 8px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  min-width: 140px;
+  text-align: center;
+}
+
+.saveGameBtn,
+.loadGameBtn {
+  background: #4caf50;
+  color: #fff;
+}
+
+.saveGameBtn:hover,
+.loadGameBtn:hover {
+  background: #388e3c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.reset-btn {
+  background: #f44336;
+  color: #fff;
+}
+
+.reset-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+#info {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+  padding: 32px 24px 48px 24px;
+  margin-top: 32px;
+  min-height: 200px;
+}
+
+#info h2,
+#info h3 {
+  color: #388e3c;
+  margin-bottom: 16px;
+}
+
+#info ul {
+  margin-bottom: 16px;
+  margin-left: 18px;
+}
+
+#info li {
+  font-size: 1.05em;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+#info a {
+  color: #388e3c;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+#info a:hover {
+  color: #2e7031;
+}
+
+#leaderboard {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-top: 16px;
+}
+
+#leaderboard th {
+  background: #388e3c;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.1em;
+}
+
+#leaderboard td {
+  background: #fff;
+  color: #222;
+  font-size: 1.1em;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+}
+
+#leaderboard td.name {
+  text-align: left;
+  padding-left: 18px;
+  font-weight: 600;
+  color: #388e3c;
+}
+
+#leaderboard td.score {
+  font-weight: 500;
+}
+
+#leaderboard td.par {
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+#leaderboard td.par.minus {
+  color: #d32f2f;
+}
+
+#leaderboard td.par.plus {
+  color: #388e3c;
+}
+
+#leaderboard td.par.zero {
+  color: #222;
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  #info,
+  #banor,
+  #översikt,
+  #inställningar {
+    border-radius: 8px;
+    
+    padding: 16px;
+    margin-top: 16px;
+  }
+  .holeCard {
+    padding: 12px 8px;
+  }
+
+  
+  #leaderboard {
+    border-spacing: 0 4px;
+  }
+
+  #leaderboard th,
+  #leaderboard td {
+    padding: 8px 4px;
+    font-size: 1rem;
+  }
+
+  #leaderboard td.name {
+    padding-left: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  #info,
+  #banor,
+  #översikt,
+  #inställningar {
    
-    .hamburga{
-    display: block;    
-    }
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
 
-    .hamburga.active .bar:nth-child(2){
-        opacity: 0;
-    }
+  
+  .add-player-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
 
-    .hamburga.active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
-    }
+  .add-player-form input,
+  .add-player-form button,
+  .add-player-form a {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
 
-    .hamburga.active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu{
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        gap: 0;
-        flex-direction: column;
-        background-color: #262626;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s ease;
-    }
-
-    .nav-menu.active{
-        left: 0;
-    }
-
-    .nav-item{
-        margin: 16px 0;
-    }
-
-    nav.link{
-        padding: 20px 0;
-        display: block;
-    }
-}
-
-.container{
-    max-width: 1200px;
-    padding: 0 25px;
-    display: none;
-}
-
-:target{
+  .saveGameBtn,
+  .loadGameBtn,
+  .reset-btn {
     display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+  }
+
+  .settings-section {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  
+  #leaderboard th,
+  #leaderboard td {
+    padding: 6px 2px;
+    font-size: 0.9rem;
+  }
+
+  
+  .holeCard {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .playerScore {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }
 
+@media (max-width: 768px) {
+  .saveGameBtn,
+  .loadGameBtn,
+  .reset-btn {
+    min-height: 44px; 
+    padding: 12px 16px;
+  }
+}
+
+.start-game-link {
+  display: inline-block;
+  background: #388e3c;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 8px;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+.start-game-link:hover {
+  background: #2e7031;
+}

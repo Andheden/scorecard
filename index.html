@@ -39,16 +39,27 @@
 
     <main>
         <div class="container" id="översikt">
-            <h2>Spelare:</h2>
-            <ul id="playerList"></ul>
-
-            <h3>Lägg till spelare</h3>
-            <input type="text" id="playerNameInput" placeholder="Namn">
-            <button id="addPlayerBtn">Lägg till</button>
-            <a href="#banor" id="startGameBtn">Starta spel</a>
+            <h2>Leaderboard</h2>
+            <div class="add-player-form">
+                <input type="text" id="playerNameInput" placeholder="Spelarnamn" />
+                <button id="addPlayerBtn">Lägg till spelare</button>
+                <a id="startGameBtn" href="#banor" class="start-game-link">Starta spel</a>
+            </div>
+            <table id="leaderboard" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Namn</th>
+                        <th>Score</th>
+                        <th>Mot Par</th>
+                        
+                        <th>Ta bort</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JS fyller på här -->
+                </tbody>
+            </table>
         </div>
-
-
 
         <div class="container" id="banor">
             <h2>Banor</h2>
@@ -56,15 +67,6 @@
                 <!-- Banor kommer att laddas här -->
             </div>
         </div>
-
-
-
-
-
-
-
-
-
 
         <div class="container" id="info">
 
@@ -87,6 +89,25 @@
                 <li>Bollen ska gå rätt väg genom hinder, "baklänges" är ej godkänt</li>
                 <li>När ni är redo, <a href="#översikt">börja lägga till spelare</a></li>
             </ul>
+
+        </div>
+
+
+        <div class="container" id="inställningar">
+            <h2>Inställningar</h2>
+            
+            <div class="settings-section">
+                <h3>Spara och ladda</h3>
+                <button class="saveGameBtn">Spara ner spel</button>
+                <button class="loadGameBtn">Ladda upp spel</button>
+                <p><small>Spara ditt spel som en fil för att kunna fortsätta senare eller dela med andra.</small></p>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Starta om</h3>
+                <button id="resetGameBtn" class="reset-btn">Starta om spel</button>
+                <p><small>Observera att detta kommer att radera all sparad data och starta om spelet från början.</small></p>
+            </div>
 
         </div>
     </main>
