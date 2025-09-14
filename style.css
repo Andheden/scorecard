@@ -107,6 +107,8 @@ nav.link:hover {
   max-width: 1200px;
   padding: 0 25px;
   display: none;
+  /* Center the container horizontally */
+  margin: 0 auto;
 }
 
 :target {
@@ -119,9 +121,13 @@ nav.link:hover {
   border-radius: 16px;
   padding: 24px;
   margin-top: 24px;
+  /* Center the översikt section */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-
+/* Removed nested padding that was causing double spacing */
 #översikt > * {
   max-width: 700px;
   margin: 0 auto;
@@ -190,7 +196,7 @@ nav.link:hover {
   margin-top: 24px;
 }
 
-
+/* Removed nested padding that was causing double spacing */
 #banor > * {
   max-width: 700px;
   margin: 0 auto;
@@ -460,7 +466,7 @@ nav.link:hover {
   #översikt,
   #inställningar {
     border-radius: 8px;
-    
+    /* Fixed padding to be more consistent on mobile */
     padding: 16px;
     margin-top: 16px;
   }
@@ -468,7 +474,7 @@ nav.link:hover {
     padding: 12px 8px;
   }
 
-  
+  /* Better mobile spacing for leaderboard */
   #leaderboard {
     border-spacing: 0 4px;
   }
@@ -489,13 +495,13 @@ nav.link:hover {
   #banor,
   #översikt,
   #inställningar {
-   
+    /* Consistent mobile padding */
     padding: 12px;
     border-radius: 8px;
     margin-top: 12px;
   }
 
-  
+  /* Better mobile form layout */
   .add-player-form {
     display: flex;
     flex-direction: column;
@@ -527,14 +533,14 @@ nav.link:hover {
     padding-bottom: 16px;
   }
 
-  
+  /* Smaller table text on very small screens */
   #leaderboard th,
   #leaderboard td {
     padding: 6px 2px;
     font-size: 0.9rem;
   }
 
-  
+  /* Stack hole cards better on mobile */
   .holeCard {
     padding: 12px;
     margin-bottom: 12px;
@@ -550,7 +556,7 @@ nav.link:hover {
   .saveGameBtn,
   .loadGameBtn,
   .reset-btn {
-    min-height: 44px; 
+    min-height: 44px; /* iOS recommended touch target size */
     padding: 12px 16px;
   }
 }
